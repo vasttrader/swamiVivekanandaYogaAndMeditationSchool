@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply inline-flex;
+  }
+
+  input {
+    @apply focus-visible:outline-none;
+  }
+}
+
+@layer components {
+  .navlink {
+    @apply font-medium whitespace-nowrap text-primary relative hover:active-navlink;
+  }
+
+  .active-navlink {
+    @apply after:rounded-sm after:absolute after:content-[''] after:left-2/4 after:-translate-x-2/4 after:-bottom-3 text-primary-contrast after:w-2 after:h-1 after:bg-primary-contrast after:text-primary-contrast;
+  }
+
+  .btn {
+    @apply rounded-full transition-colors ease-in-out;
+  }
+
+  .btn-primary {
+    @apply hover:bg-primary-contrast text-white bg-primary-highlight px-6 py-2 text-sm whitespace-nowrap;
+  }
+
+  .btn-secondary {
+    @apply hover:bg-white hover:text-secondary text-white bg-secondary px-4 py-2 text-sm border-2 border-secondary whitespace-nowrap;
+  }
+}
